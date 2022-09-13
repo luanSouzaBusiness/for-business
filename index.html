@@ -1,15 +1,35 @@
 <style>
   body {
-    /* Mudar cor do fundo */
-    background-color: #000000!important;
-    /* Mudar família da fonte */
+    background-color: #000000;
     font-family:'Montserrat', sans-serif!important;
     /* Mudar cor da fonte */
     color: #ffffff!important;
-    /* Não alterar */
     font-size: 1.1rem!important;
     line-height: 1.5rem!important;
     text-align: center!important;
+  }
+
+  .gradient {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(45deg, #151515 0%, #301B3F 40%, #476D7C 60%, #77ABB7 100%);
+    background-size: 200% 200%;
+    animation: colors 15s linear infinite alternate;
+  }
+
+  @keyframes colors {
+    0% {
+      background-position: 0% 50%;
+    }
+
+    50% {
+      background-position: 100% 50%;
+    }
+
+    100% {
+      background-position: 0% 50%;
+    }
   }
 
   .container-fluid {
@@ -118,7 +138,7 @@
   <meta name="author" content="Queiroz, Isaias">
   <link rel="icon" type="image/x-icon" href="https://user-images.githubusercontent.com/113393140/189775732-e6f888f1-a97d-4945-be4d-c0db2ffe191e.png">
 </head>
-<body>
+<body class="gradient">
   <main>
     <!--Photo-->
     <div class="container-fluid photo" id="top">
@@ -195,22 +215,22 @@
           </div>
       </div>
     </div>
-  </main>
-  <footer>
-    <div class="container-fluid">
+
+    <!--Footer-->
+    <footer>
+      <div class="container-fluid">
         <div class="row">
-            <div class="col">
-                <!-- Pode alterar se quiser, mas ficarei muito grato caso possa deixar um link para o meu site :) -->
-                <p>
-                    Feito por <a href="https://ehayashi.com" target="_blank" title="Queiroz, Isaias">Queiroz, Isaias</a>
-                </p>
-                <p>&nbsp;</p>
-                <p>
-                    <a href="#top"><i class="bi bi-arrow-up-circle-fill"></i> Back to top</a>
-                </p>
-            </div>
+          <div class="col">
+            <p>
+                <a href="#top"><i class="bi bi-arrow-up-circle-fill"></i> Back to top</a>
+            </p>
+            <p align="right" style="font-size: 0.7rem; line-height: 1rem;">
+              Feito por <a href="https://ehayashi.com" target="_blank" title="Queiroz, Isaias">Queiroz, Isaias</a>
+          </p>
+          </div>
         </div>
-    </div> 
-  </footer>
+      </div>
+    </footer>
+  </main>
 </body>
 </html>
