@@ -21,7 +21,7 @@
 
   .container-fluid {
     max-width: 100%;
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
   }
 
   /* BACKGROUND */
@@ -57,17 +57,33 @@
 
   .photo img {
     border-radius: 50%;
-    max-width: 250px;
+    max-width: 150px;
   }
 
   /* TITLE */
-  .title h1 {
-    font-weight: 800;
-    font-size: 2.5rem;
-    line-height: 3rem;;
+  .container-fluid-title {
+    max-width: 100%;
   }
 
-  /* CARD */
+  .reflected{
+    display: inline-block;
+    width: max-content;
+  }
+
+  .reflected > * {
+    font-weight: 700;
+    font-size: 2.5rem;
+    line-height: 3rem;
+    color: #ffffff;
+  }
+  .reflected > :last-child {
+    transform: rotateX(180deg) translateY(12px);
+    mask-image: linear-gradient(transparent 50%, white 90%);
+    -webkit-mask-image: linear-gradient(transparent 50%, white 90%);
+    opacity: 0.72;
+  }
+
+  /* ICONS */
   .wrapper-flex {
     display: flex;
     flex-wrap: wrap;
@@ -75,35 +91,49 @@
   }
 
   .container {
-    overflow: hidden;
-    box-shadow: 0px 2px 8px 0px var(--clr-gray-light);
-    text-align: center;
-    border-radius: 1rem;
-    position: relative;
-    width: 350px;
     margin: 0rem 1rem 1rem 1rem;
     cursor: pointer;
   }
 
-  .profile-img {
-    width: 5rem;
-    clip-path: circle(40px at center);
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-    margin-right: 2rem;
+  .icons {
+    display: flex;
+    column-gap: 25px;
   }
 
-  .name {
-    font-weight: bold;
-    font-size: 1.5rem;
-    text-align: initial;
-    margin: 2rem 1rem 0rem;
+  .icon{
+    width: 60px;
+    height: 60px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 26px;
+    color: #fff;
+    border-radius: 50%;
+    outline: 2px solid #fff;
+    transition-property: outline-offset, outline-color, background-color;
+    transition-duration: .25s;
+  }
+  .icon:hover{
+    outline-offset: 4px;
+  }
+  .icon:hover i{
+    animation: snake .25s;
+  }
+  .icon--instagram:hover {
+    background-image: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 68%, #285aeb 90%);
+    outline-color: #a02d76;
+  }
+  .icon--whatsapp:hover{
+    background-color: #2ea44f;
+    outline-color: #2ea44f;
   }
 
-  .description {
-    margin: 0rem 1rem 1rem;
-    font-size: 0.9rem;
-    text-align: initial;
+  @keyframes snake {
+    10%{transform: rotate(15deg);}
+    20%{transform: rotate(-15deg);}
+    30%{transform: rotate(15deg);}
+    40%{transform: rotate(-15deg);}
   }
 
   /* FOOTER */
@@ -121,18 +151,6 @@
   footer a:hover {
     color: #77ABB7;
   }
-
-  .stretched-link::after {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: 1;
-    pointer-events: auto;
-    content: "";
-    background-color: rgba(0,0,0,0);
-  }
 </style>
 
 <!doctype html>
@@ -145,6 +163,7 @@
   <meta name="description" content="Luan Souza for business">
   <meta name="author" content="Queiroz, Isaias">
   <link rel="icon" type="image/x-icon" href="https://user-images.githubusercontent.com/113393140/189775732-e6f888f1-a97d-4945-be4d-c0db2ffe191e.png">
+  <script src="https://kit.fontawesome.com/03591432bb.js" crossorigin="anonymous"></script>
 </head>
 <body class="gradient">
   <main>
@@ -154,23 +173,26 @@
           <div class="col">
               <p>
                   <!-- Altere aqui o seu avatar. Utilizar proporção de 1:1 (Quadrado)-->
-                  <img src="https://user-images.githubusercontent.com/113393140/189771387-82dd941f-34ab-49d1-97e8-ef3c9ef247d9.jpg">
+                  <img src="https://user-images.githubusercontent.com/113393140/192902490-1e3c37ca-97f6-47e4-8161-f3c7567a6fcf.jpeg">
               </p>
           </div>
       </div>
     </div>
 
     <!--Title-->
-    <div class="container-fluid title bottom">
+    <div class="container-fluid-title title">
       <div class="row">
           <div class="col">
-              <h1>Luan Souza</h1>
+              <div class="reflected">
+                  <div>Luan Souza</div>
+                  <div>Luan Souza</div>
+              </div>
           </div>
       </div>
     </div>
 
     <!--Bio-->
-    <div class="container-fluid bio bottom">
+    <div class="container-fluid bio">
       <div class="row">
           <div class="col">
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus auctor mauris vitae tellus dignissim ullamcorper.</p>
@@ -181,17 +203,19 @@
     <!--Links-->
     <div class="wrapper-flex">
       <div class="container">
-        <img align="right" src='https://user-images.githubusercontent.com/113393140/190041439-36e8d14a-8293-40f0-af28-573d68c295ac.png' alt='profile image' class="profile-img">
-        <h1 class="name">Instagram</h1>
-        <p class="description">@l.souzz97</p>
-        <a href="https://www.instagram.com/l.souzz97/" class="stretched-link"></a>
+        <div class="icons">
+          <a href="https://www.instagram.com/l.souzz97/" class="icon icon--instagram">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+        </div>
       </div>
-    
+  
       <div class="container">
-        <img align="right" src='https://user-images.githubusercontent.com/113393140/190043448-a1b1f8c1-7efe-47f9-94a5-fc8ac68a5b9c.png' alt='profile image' class="profile-img">
-        <p class="name">WhatsApp</p>
-        <p class="description">Converse pelo WhatsApp</p>
-        <a href="https://api.whatsapp.com/send?phone=5571996825534&text=Ol%C3%A1%2C%20gostaria%20de%20saber%20um%20pouco%20mais%20sobre%20o%20seu%20trabalho!" class="stretched-link"></a>
+        <div class="icons">
+          <a href="https://api.whatsapp.com/send?phone=5571996825534&text=Ol%C3%A1%2C%20gostaria%20de%20saber%20um%20pouco%20mais%20sobre%20o%20seu%20trabalho!" class="icon icon--whatsapp">
+              <i class="fa-brands fa-whatsapp"></i>
+          </a>
+        </div>
       </div>
     </div>
 
@@ -200,13 +224,8 @@
       <div>
         <div class="row">
           <div class="col">
-            <p>
-                <a href="#top"><i class="bi bi-arrow-up-circle-fill"></i> Back to top</a>
-            </p>
-            <p>&nbsp;</p>
-            <p>&nbsp;</p>
             <p align="right" style="font-size: 0.7rem; line-height: 1rem;">
-              Feito por <a href="/" target="_blank" title="Queiroz, Isaias">Queiroz, Isaias</a>
+              Feito por <a href="https://www.instagram.com/isaiasrqueiroz/" target="_blank" title="Queiroz, Isaias">Queiroz, Isaias</a>
           </p>
           </div>
         </div>
