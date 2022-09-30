@@ -114,9 +114,13 @@ body {
     outline: 2px solid #fff;
     transition-property: outline-offset, outline-color, background-color;
     transition-duration: .25s;
-    border-radius: 30px;
-    -moz-border-radius: 30px;
-    -webkit-border-radius: 30px;
+    -webkit-border-radius: 50%;
+     -khtml-border-radius: 50%;
+       -moz-border-radius: 50%;
+            border-radius: 50%;
+    border: 3px solid #fff;
+    behavior: url(css/PIE.htc);
+    overflow: hidden;
 }
 .container-icons { 
     display: flex;
@@ -139,9 +143,13 @@ body {
     outline: 2px solid #fff;
     transition-property: outline-offset, outline-color, background-color;
     transition-duration: .25s;
-    border-radius: 30px;
-    -moz-border-radius: 30px;
-    -webkit-border-radius: 30px;
+    -webkit-border-radius: 50%;
+     -khtml-border-radius: 50%;
+       -moz-border-radius: 50%;
+            border-radius: 50%;
+    border: 0px solid #fff;
+    behavior: url(css/PIE.htc);
+    overflow: hidden;
 }
 .icon:hover{
     outline-offset: 4px;
