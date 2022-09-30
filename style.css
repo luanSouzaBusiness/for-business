@@ -91,8 +91,33 @@ body {
     text-align: center;
     user-select: none;
     color: var(--primary-color);
+    padding-top: 1rem;
 }
 /* ICONES */
+.container-check { 
+    justify-content: center;
+    padding-top: 7rem;
+}
+.check {
+    display: flex;
+}
+.icon-check{
+    width: 60px;
+    height: 60px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    background-color: #2ea44f;
+    font-size: 26px;
+    color: #fff;
+    outline: 2px solid #fff;
+    transition-property: outline-offset, outline-color, background-color;
+    transition-duration: .25s;
+    border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+}
 .container-icons { 
     display: flex;
     justify-content: center;
@@ -111,10 +136,12 @@ body {
     text-decoration: none;
     font-size: 26px;
     color: #fff;
-    border-radius: 50%;
     outline: 2px solid #fff;
     transition-property: outline-offset, outline-color, background-color;
     transition-duration: .25s;
+    border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
 }
 .icon:hover{
     outline-offset: 4px;
@@ -258,21 +285,6 @@ body {
 }
 .text {
     color: #000f0c;
-}
-.fa-check {
-    opacity: 0;
-}
-.button:focus {
-    width: 50px;
-    background-color: #44c08a;
-    border-radius: 50%;
-}
-.button:focus .text {
-    opacity: 0;
-}
-.button:focus .fa-check {
-    opacity: 1;
-    transition-delay: .5s;
 }
 
 /* FOOTER */

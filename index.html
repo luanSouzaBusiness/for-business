@@ -51,7 +51,8 @@
         <!--E-mail-->
         <form class="form" target="_blank" action="https://formsubmit.co/i.queiroz.da@gmail.com" method="POST">
             <div class="form--title">Contato</div>
-            <div id="mensagem" class="mensagem" hidden>Sua solicitação foi enviada com sucesso. Logo entrarei em contato.</div>
+            <input type="hidden" name="_autoresponse">
+            <input type="hidden" name="_subject" value="Nova solicitação de contato.">
             <div id="email" class="row">
                 <div class="inputbox">
                     <input type="text" id="nome" name="Nome" required>
@@ -64,7 +65,7 @@
             </div>
             <div id="email" class="row">
                 <div class="inputbox">
-                    <input type="text" id="e-mail" name="E-mail" required>
+                    <input type="email" id="e-mail" name="E-mail" required>
                     <label for="e-mail">E-mail</label>
                 </div>
             </div>
@@ -95,9 +96,11 @@
                 </div>
             </div>
 
-            <input type="hidden" name="_captcha" value="false" />
+            <input type="hidden" name="_captcha" value="true" />
+            <!-- value="https://luansouzabusiness.github.io/for-business/sucesso.html"  -->
+            <input type="hidden" name="_next" value="file:///C:/Users/isaia/Desktop/luan_souza_for_business/sucesso.html">
             <div id="email" class="row">
-                <button id="btn-send" class="button" type="submit" onclick="escondeDiv()">
+                <button id="btn-send" class="button" type="submit">
                     <span class="text">Enviar</span>
                     <i class="fa-solid fa-check"></i>
                 </button>
@@ -112,14 +115,5 @@
             </p>
         </div>
     </footer>
-
-    <script>
-        $(document).ready(function() {
-            $("#btn-send").click(function() {
-                $('div[id*="email"]').hide();
-                $('div[id*="mensagem"]').show();
-            });
-        });
-    </script>
 </body>
 </html>
