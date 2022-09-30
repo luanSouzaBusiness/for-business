@@ -111,7 +111,6 @@ body {
     background-color: #2ea44f;
     font-size: 26px;
     color: #fff;
-    outline: 2px solid #fff;
     transition-property: outline-offset, outline-color, background-color;
     transition-duration: .25s;
     -webkit-border-radius: 50%;
