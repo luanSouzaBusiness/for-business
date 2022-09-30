@@ -119,8 +119,6 @@ body {
        -moz-border-radius: 50%;
             border-radius: 50%;
     border: 3px solid #fff;
-    behavior: url(css/PIE.htc);
-    overflow: hidden;
 }
 .container-icons { 
     display: flex;
@@ -140,16 +138,13 @@ body {
     text-decoration: none;
     font-size: 26px;
     color: #fff;
-    outline: 2px solid #fff;
     transition-property: outline-offset, outline-color, background-color;
     transition-duration: .25s;
     -webkit-border-radius: 50%;
      -khtml-border-radius: 50%;
        -moz-border-radius: 50%;
             border-radius: 50%;
-    border: 0px solid #fff;
-    behavior: url(css/PIE.htc);
-    overflow: hidden;
+    border: 0.1rem solid #fff;
 }
 .icon:hover{
     outline-offset: 4px;
