@@ -118,7 +118,7 @@ body {
      -khtml-border-radius: 50%;
        -moz-border-radius: 50%;
             border-radius: 50%;
-    border: 3px solid #fff;
+    border: 0 solid #fff;
 }
 .container-icons { 
     display: flex;
@@ -144,7 +144,7 @@ body {
      -khtml-border-radius: 50%;
        -moz-border-radius: 50%;
             border-radius: 50%;
-    border: 0.1rem solid #fff;
+    border: 0 solid #fff;
 }
 .icon:hover{
     outline-offset: 4px;
