@@ -1,236 +1,126 @@
-<style>
-  * {
-    box-sizing: border-box;
-    font-family:"Montserrat", sans-serif;
-    margin: 0;
-    padding: 0;
-  }
-  
-  :root {
-    --clr-gray: #37474f;
-    --clr-gray-light: #b0bec5;
-  }
-
-  body {
-    margin: 2rem;
-    color: #ffffff!important;
-    font-size: 1.1rem!important;
-    line-height: 1.5rem!important;
-    text-align: center!important;
-  }
-
-  .container-fluid {
-    max-width: 100%;
-    margin-bottom: 2rem;
-  }
-
-  /* BACKGROUND */
-  .gradient {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: linear-gradient(45deg, #151515 0%, #301B3F 40%, #476D7C 60%, #77ABB7 100%);
-    background-size: 200% 200%;
-    background-repeat: no-repeat;
-    animation: colors 15s linear infinite alternate;
-  }
-
-  @keyframes colors {
-    0% {
-      background-position: 0% 50%;
-    }
-
-    50% {
-      background-position: 100% 50%;
-    }
-
-    100% {
-      background-position: 0% 50%;
-    }
-  }
-
-  /* PHOTO */
-  .photo {
-    margin-top: 40px;
-    margin-bottom: 40px;
-  }
-
-  .photo img {
-    border-radius: 50%;
-    max-width: 150px;
-  }
-
-  /* TITLE */
-  .container-fluid-title {
-    max-width: 100%;
-  }
-
-  .reflected{
-    display: inline-block;
-    width: max-content;
-  }
-
-  .reflected > * {
-    font-weight: 700;
-    font-size: 2.5rem;
-    line-height: 3rem;
-    color: #ffffff;
-  }
-  .reflected > :last-child {
-    transform: rotateX(180deg) translateY(12px);
-    mask-image: linear-gradient(transparent 50%, white 90%);
-    -webkit-mask-image: linear-gradient(transparent 50%, white 90%);
-    opacity: 0.72;
-  }
-
-  /* ICONS */
-  .wrapper-flex {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  .container {
-    margin: 0rem 1rem 1rem 1rem;
-    cursor: pointer;
-  }
-
-  .icons {
-    display: flex;
-    column-gap: 25px;
-  }
-
-  .icon{
-    width: 60px;
-    height: 60px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    font-size: 26px;
-    color: #fff;
-    border-radius: 50%;
-    outline: 2px solid #fff;
-    transition-property: outline-offset, outline-color, background-color;
-    transition-duration: .25s;
-  }
-  .icon:hover{
-    outline-offset: 4px;
-  }
-  .icon:hover i{
-    animation: snake .25s;
-  }
-  .icon--instagram:hover {
-    background-image: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 68%, #285aeb 90%);
-    outline-color: #a02d76;
-  }
-  .icon--whatsapp:hover{
-    background-color: #2ea44f;
-    outline-color: #2ea44f;
-  }
-
-  @keyframes snake {
-    10%{transform: rotate(15deg);}
-    20%{transform: rotate(-15deg);}
-    30%{transform: rotate(15deg);}
-    40%{transform: rotate(-15deg);}
-  }
-
-  /* FOOTER */
-  footer {
-    font-size: 0.8rem;
-    line-height: 1rem;
-    padding-top: 5rem;
-  }
-
-  footer a {
-    text-decoration: none;
-    color: #ffffff;
-  }
-
-  footer a:hover {
-    color: #77ABB7;
-  }
-</style>
-
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="pt-br">
 <head>
-  <meta charset="utf-8">
-  <title>Luan Souza | for business</title>
-  <base href="/">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Luan Souza for business">
-  <meta name="author" content="Queiroz, Isaias">
-  <link rel="icon" type="image/x-icon" href="https://user-images.githubusercontent.com/113393140/189775732-e6f888f1-a97d-4945-be4d-c0db2ffe191e.png">
-  <script src="https://kit.fontawesome.com/03591432bb.js" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <!-- <script src="index.js" type="module" defer></script> -->
+    <base href="/">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Luan Souza for business">
+    <meta name="author" content="Queiroz, Isaias">
+    <link rel="stylesheet" href=".\style.css">
+    <link rel="icon" type="image/x-icon" href="https://user-images.githubusercontent.com/113393140/189775732-e6f888f1-a97d-4945-be4d-c0db2ffe191e.png">
+    <script src="https://kit.fontawesome.com/03591432bb.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <title>Luan Souza | for business</title>
 </head>
 <body class="gradient">
-  <main>
-    <!--Photo-->
-    <div class="container-fluid photo" id="top">
-      <div class="row">
-          <div class="col">
-              <p>
-                  <!-- Altere aqui o seu avatar. Utilizar proporção de 1:1 (Quadrado)-->
-                  <img src="https://user-images.githubusercontent.com/113393140/192902490-1e3c37ca-97f6-47e4-8161-f3c7567a6fcf.jpeg">
-              </p>
-          </div>
-      </div>
-    </div>
-
-    <!--Title-->
-    <div class="container-fluid-title title">
-      <div class="row">
-          <div class="col">
-              <div class="reflected">
-                  <div>Luan Souza</div>
-                  <div>Luan Souza</div>
-              </div>
-          </div>
-      </div>
-    </div>
-
-    <!--Bio-->
-    <div class="container-fluid bio">
-      <div class="row">
-          <div class="col">
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus auctor mauris vitae tellus dignissim ullamcorper.</p>
-          </div>
-      </div>
-    </div>
-
-    <!--Links-->
-    <div class="wrapper-flex">
-      <div class="container">
-        <div class="icons">
-          <a href="https://www.instagram.com/l.souzz97/" class="icon icon--instagram">
-            <i class="fa-brands fa-instagram"></i>
-          </a>
+    <main class="container">
+        <!--Photo-->
+        <div align="center" name="foto" class="photo">
+            <p>
+                <img src="https://user-images.githubusercontent.com/113393140/192902490-1e3c37ca-97f6-47e4-8161-f3c7567a6fcf.jpeg">
+            </p>
         </div>
-      </div>
-  
-      <div class="container">
-        <div class="icons">
-          <a href="https://api.whatsapp.com/send?phone=5571996825534&text=Ol%C3%A1%2C%20gostaria%20de%20saber%20um%20pouco%20mais%20sobre%20o%20seu%20trabalho!" class="icon icon--whatsapp">
-              <i class="fa-brands fa-whatsapp"></i>
-          </a>
-        </div>
-      </div>
-    </div>
 
+        <!--Title-->
+        <div class="title reflected">
+            <div>Luan Souza</div>
+            <div>Luan Souza</div>
+        </div>
+
+        <!--Bio-->
+        <div class="bio">
+            <div>Atleta, graduando em nutrição</div>
+            <div>Entre em contato e começe ja uma consultoria.</div> 
+        </div>
+
+        <!--Links-->
+        <div class="container-icons">
+            <div class="icons">
+                <a href="https://www.instagram.com/l.souzz97/" class="icon icon--instagram">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+            </div>
+        
+            <div class="icons">
+                <a href="https://api.whatsapp.com/send?phone=5571996825534&text=Ol%C3%A1%2C%20gostaria%20de%20saber%20um%20pouco%20mais%20sobre%20o%20seu%20trabalho!" class="icon icon--whatsapp">
+                    <i class="fa-brands fa-whatsapp"></i>
+                </a>
+            </div>
+        </div>
+
+        <!--E-mail-->
+        <form class="form" target="_blank" action="https://formsubmit.co/i.queiroz.da@gmail.com" method="POST">
+            <div class="form--title">Contato</div>
+            <div id="mensagem" class="mensagem" hidden>Sua solicitação foi enviada com sucesso. Logo entrarei em contato.</div>
+            <div id="email" class="row">
+                <div class="inputbox">
+                    <input type="text" id="nome" required>
+                    <label for="nome">Nome</label>
+                </div>
+                <div class="inputbox">
+                    <input type="text" id="sobrenome"  required>
+                    <label for="sobrenome">Sobrenome</label>
+                </div>
+            </div>
+            <div id="email" class="row">
+                <div class="inputbox">
+                    <input type="text" id="e-mail"  required>
+                    <label for="e-mail">E-mail</label>
+                </div>
+            </div>
+            <div id="email" class="row">
+                <div class="inputbox">
+                    <input type="text" id="watsapp"  required>
+                    <label for="watsapp">WhatsApp</label>
+                </div>
+                <div class="inputbox">
+                    <input type="text" id="idade"  required>
+                    <label for="idade">Idade</label>
+                </div>
+            </div>
+            <div id="email" class="row">
+                <div class="inputbox">
+                    <input type="text" id="altura"  required>
+                    <label for="altura">Altura</label>
+                </div>
+                <div class="inputbox">
+                    <input type="text" id="peso"  required>
+                    <label for="peso">Peso atual</label>
+                </div>
+            </div>
+            <div id="email" class="row">
+                <div class="inputbox--textarea">
+                    <textarea type="text-area" id="objetivo" rows="5" required="true"></textarea>
+                    <label for="objetivo">Objetivo</label>
+                </div>
+            </div>
+
+            <input type="hidden" name="_captcha" value="false" />
+            <div class="row">
+                <button id="btn-send" class="button" type="submit" onclick="escondeDiv()">
+                    <span class="text">Enviar</span>
+                    <i class="fa-solid fa-check"></i>
+                </button>
+            </div>
+        </form>
+    </main>
     <!--Footer-->
     <footer>
-      <div>
         <div class="row">
-          <div class="col">
-            <p align="right" style="font-size: 0.7rem; line-height: 1rem;">
-              Feito por <a href="https://www.instagram.com/isaiasrqueiroz/" target="_blank" title="Queiroz, Isaias">Queiroz, Isaias</a>
-          </p>
-          </div>
+            <p align="center" style="font-size: 0.7rem; line-height: 1rem;">
+                <a href="https://www.instagram.com/isaiasrqueiroz/" target="_blank" title="Queiroz, Isaias">Queiroz, Isaias</a> &#169 2022
+            </p>
         </div>
-      </div>
     </footer>
-  </main>
+
+    <script>
+        $(document).ready(function() {
+            $("#btn-send").click(function() {
+                $('div[id*="email"]').hide();
+                $('div[id*="mensagem"]').show();
+            });
+        });
+    </script>
 </body>
 </html>
